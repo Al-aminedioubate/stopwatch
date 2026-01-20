@@ -41,11 +41,7 @@ button{
   text-align: center;
   font-weight: bold;
   margin-bottom: 30px;
-}
-
-button:hover{
-   cursor: pointer;
-   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .btn-container{

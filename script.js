@@ -11,6 +11,7 @@ let btnAll = document.querySelectorAll("button");
 function start() {
 	btnStart.disabled = true;
 	btnStart.style.backgroundColor = "gray";
+	btnStop.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStop.disabled = false;
 	btnReset.disabled = false;
 	console.log("Bravo start");
@@ -18,6 +19,7 @@ function start() {
 
 function stop() {
 	btnStop.disabled = true;
+	btnStop.style.backgroundColor = "gray";
 	btnStart.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStart.disabled = false;
 	btnReset.disabled = false;
