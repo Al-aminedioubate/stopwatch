@@ -6,7 +6,7 @@ let btnReset = document.getElementById("resetBtn");
 let pResult = document.getElementById("showTimer");
 
 let timer, timeShow;
-let btnAll = document.querySelectorAll("button");
+
 //Creation  des fonctions pour les fonctionnalite
 function start() {
 	btnStart.disabled = true;
