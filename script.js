@@ -29,6 +29,8 @@ function stop() {
 function reset() {
 	btnReset.disabled = true;
 	btnReset.style.backgroundColor = "gray";
+	btnStart.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
+	btnStop.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 
 	console.log("Brovo reset");
 }
