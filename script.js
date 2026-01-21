@@ -5,10 +5,15 @@ let btnReset = document.getElementById("resetBtn");
 
 let pResult = document.getElementById("showTimer");
 
-let timer, timeShow;
+let timer, countdown;
 
 //Creation  des fonctions pour les fonctionnalite
 function start() {
+	timer = setInterval(function () {
+		countdown += 1000;
+	}, 1000);
+
+	let hour = Math.floor();
 	btnStart.disabled = true;
 	btnStart.style.backgroundColor = "gray";
 	btnStop.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
@@ -16,6 +21,14 @@ function start() {
 	btnStop.disabled = false;
 	btnReset.disabled = false;
 	console.log("Bravo start");
+}
+
+function updatTimer() {
+	//convertisons la valeur de countdown en seconde et en minutes
+	const minutes = Math.floor(countdown / (1000 * 60));
+	const seconds = Math.floor((countdown % (1000 * 60)) / 1000);
+
+	timerShow.textContent = `${minutes}:${seconds}`;
 }
 
 function stop() {
