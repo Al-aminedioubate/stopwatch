@@ -27,6 +27,7 @@ function stop() {
 }
 
 function reset() {
+	btnReset.disabled = true;
 	console.log("Brovo reset");
 }
 
