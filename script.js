@@ -3,17 +3,20 @@ let btnStart = document.getElementById("startBtn");
 let btnStop = document.getElementById("stopBtn");
 let btnReset = document.getElementById("resetBtn");
 
-let pResult = document.getElementById("showTimer");
+let timerShow = document.getElementById("showTimer");
 
-let timer, countdown;
+let timer = null;
+let startTime = 0;
+let timeLeft = 0;
 
 //Creation  des fonctions pour les fonctionnalite
 function start() {
+	startTime = Date.now() - timeLeft;
 	timer = setInterval(function () {
-		countdown += 1000;
+		timeLeft = Date.now() - startTime;
+		updatTimer(timeLeft);
 	}, 1000);
 
-	let hour = Math.floor();
 	btnStart.disabled = true;
 	btnStart.style.backgroundColor = "gray";
 	btnStop.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
@@ -23,15 +26,17 @@ function start() {
 	console.log("Bravo start");
 }
 
-function updatTimer() {
+function updatTimer(times) {
 	//convertisons la valeur de countdown en seconde et en minutes
-	const minutes = Math.floor(countdown / (1000 * 60));
-	const seconds = Math.floor((countdown % (1000 * 60)) / 1000);
+	const hours = Math.floor(times / (1000 * 60 * 60));
+	const minutes = Math.floor((times % (1000 * 60 * 60)) / (1000 * 60));
+	const seconds = Math.floor((times % (1000 * 60)) / 1000);
 
-	timerShow.textContent = `${minutes}:${seconds}`;
+	timerShow.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
 function stop() {
+	clearInterval(timer);
 	btnStop.disabled = true;
 	btnStop.style.backgroundColor = "gray";
 	btnStart.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
