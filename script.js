@@ -28,6 +28,8 @@ function stop() {
 
 function reset() {
 	btnReset.disabled = true;
+	btnReset.style.backgroundColor = "gray";
+
 	console.log("Brovo reset");
 }
 
