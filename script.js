@@ -15,7 +15,7 @@ function start() {
 	timer = setInterval(function () {
 		timeLeft = Date.now() - startTime;
 		updatTimer(timeLeft);
-	}, 1000);
+	}, 10);
 
 	btnStart.disabled = true;
 	btnStart.style.backgroundColor = "gray";
@@ -31,8 +31,9 @@ function updatTimer(times) {
 	const hours = Math.floor(times / (1000 * 60 * 60));
 	const minutes = Math.floor((times % (1000 * 60 * 60)) / (1000 * 60));
 	const seconds = Math.floor((times % (1000 * 60)) / 1000);
+	const ms = Math.floor((times % 1000) / 10);
 
-	timerShow.textContent = `${hours}:${minutes}:${seconds}`;
+	timerShow.textContent = `${hours}:${minutes}:${seconds}.${ms}`;
 }
 
 function stop() {
