@@ -26,6 +26,7 @@ function start() {
 	console.log("Bravo start");
 }
 
+//fonction du mise a jour du temps
 function updatTimer(times) {
 	//convertisons la valeur de countdown en seconde et en minutes
 	const hours = Math.floor(times / (1000 * 60 * 60));
@@ -36,26 +37,31 @@ function updatTimer(times) {
 	timerShow.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(ms).padStart(2, "0")}`;
 }
 
+//fonction permettant d'arreter le chrono
 function stop() {
 	clearInterval(timer);
+
 	btnStop.disabled = true;
 	btnStop.style.backgroundColor = "gray";
 	btnStart.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnReset.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStart.disabled = false;
 	btnReset.disabled = false;
-	console.log("Brovo stop");
 }
 
+//La fonction permettant de remettre le chrono a zero
 function reset() {
+	clearInterval(timer);
+	startTime = 0;
+	timeLeft = 0;
+	updatTimer(0);
+
 	btnReset.disabled = true;
 	btnReset.style.backgroundColor = "gray";
 	btnStart.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStop.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStart.disabled = false;
 	btnStop.disabled = false;
-
-	console.log("Brovo reset");
 }
 
 //Ajoutons des evenement a nos buttons
