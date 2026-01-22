@@ -23,7 +23,6 @@ function start() {
 	btnReset.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStop.disabled = false;
 	btnReset.disabled = false;
-	console.log("Bravo start");
 }
 
 //fonction du mise a jour du temps
