@@ -9,6 +9,17 @@ let timer = null;
 let startTime = 0;
 let timeLeft = 0;
 
+//fonction du mise a jour du temps
+function updatTimer(times) {
+	//convertisons la valeur de countdown en seconde et en minutes
+	const hours = Math.floor(times / (1000 * 60 * 60));
+	const minutes = Math.floor((times % (1000 * 60 * 60)) / (1000 * 60));
+	const seconds = Math.floor((times % (1000 * 60)) / 1000);
+	const ms = Math.floor((times % 1000) / 10);
+
+	timerShow.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(ms).padStart(2, "0")}`;
+}
+
 //Creation  des fonctions pour les fonctionnalite
 function start() {
 	startTime = Date.now() - timeLeft;
@@ -23,17 +34,6 @@ function start() {
 	btnReset.style.backgroundColor = "rgba(238, 24, 171, 0.768)";
 	btnStop.disabled = false;
 	btnReset.disabled = false;
-}
-
-//fonction du mise a jour du temps
-function updatTimer(times) {
-	//convertisons la valeur de countdown en seconde et en minutes
-	const hours = Math.floor(times / (1000 * 60 * 60));
-	const minutes = Math.floor((times % (1000 * 60 * 60)) / (1000 * 60));
-	const seconds = Math.floor((times % (1000 * 60)) / 1000);
-	const ms = Math.floor((times % 1000) / 10);
-
-	timerShow.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(ms).padStart(2, "0")}`;
 }
 
 //fonction permettant d'arreter le chrono
