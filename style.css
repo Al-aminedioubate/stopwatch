@@ -6,6 +6,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 /*container style section*/
 .container{
     width: 600px;
@@ -31,6 +32,7 @@ p:hover{
    cursor: pointer;
    transform: scale(1.1);
 }
+
 /*Button style section*/
 button{
   color:white;
