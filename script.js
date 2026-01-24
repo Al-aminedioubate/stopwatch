@@ -17,7 +17,7 @@ function updatTimer(times) {
 	const seconds = Math.floor((times % (1000 * 60)) / 1000);
 	const ms = Math.floor((times % 1000) / 10);
 
-	timerShow.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(ms).padStart(2, "0")}`;
+	timerShow.textContent = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}.${ms.toString().padStart(2, "0")}`;
 }
 
 //Creation  des fonctions pour les fonctionnalite
